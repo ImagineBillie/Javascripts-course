@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coin Flip Game</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+            background-color: #f4f4f4;
+            margin: 20px;
+        }
+        .container {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+            background-color: #007bff;
+            color: white;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        p {
+            font-size: 18px;
+            margin-top: 10px;
+        }
+        .result {
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Coin Flip Game</h1>
+        <p>Guess the flip!</p>
+        <div id="guess-buttons">
+            <button onclick="playGame('heads')">Heads</button>
+            <button onclick="playGame('tails')">Tails</button>
+        </div>
+        <p id="flip-result"></p>
+        <p id="game-outcome"></p>
+    </div>
+
+    <script>
+        function playGame(guess) {
+            // 6f. Generate a random number
+            const randomNumber = Math.random();
+
+            // 6h. Determine the result using a ternary operator (Challenge 6j)
+            const result = randomNumber < 0.5 ? 'heads' : 'tails';
+
+            // Display the flip result
+            document.getElementById('flip-result').textContent = `The coin landed on: ${result}`;
+
+            // 6i. Check if the guess matches the result using a ternary operator (Challenge 6j)
+            const outcome = guess === result ? 'You Win!' : 'You Lose!';
+
+            // Display the game outcome
+            document.getElementById('game-outcome').textContent = outcome;
+
+            // For console logging (as per original instructions 6g & 6i)
+            console.log(`Random Number: ${randomNumber}`);
+            console.log(`Result: ${result}`);
+            console.log(`Your Guess: ${guess}`);
+            console.log(`Outcome: ${outcome}`);
+        }
+    </script>
+</body>
+</html>

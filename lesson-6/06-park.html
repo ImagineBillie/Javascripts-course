@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Age Input</title> </head>
+<body>
+    <!-- <label for="age">Enter your age: </label>  -->
+    <!-- <input type="number" id="age" name="age">  -->
+    <button onclick="checkDiscount()">Check discount</button>
+    <br>  
+    <script>
+        // let ageInput = document.getElementById('age');
+        let ageInput = 66;
+        // console.log("Current value:", ageInput.value);        
+
+        const isHoliday = true;
+        // const isHoliday = false;
+        
+        function checkDiscount(){
+          if ((ageInput <= 6 || ageInput >=65) && isHoliday){
+            console.log('Discount');
+          } else {
+            console.log('No discount');
+          }
+        }
+    </script>
+</body>
+</html>
